@@ -9,6 +9,7 @@ function showSuccessTemplate() {
   successFragment.append(successElement);
   document.body.append(successFragment);
   const closeButton = successElement.querySelector('.success__button');
+
   closeButton.addEventListener('click', () => {
     successElement.remove();
     document.removeEventListener('keydown', onSuccessEscKeydown);
@@ -37,6 +38,7 @@ function showErrorTemplate() {
   errorFragment.append(errorElement);
   document.body.append(errorFragment);
   const closeButton = errorElement.querySelector('.error__button');
+
   closeButton.addEventListener('click', () => {
     errorElement.remove();
     document.removeEventListener('keydown', onErrorEscKeydown);

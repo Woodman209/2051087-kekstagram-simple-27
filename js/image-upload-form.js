@@ -127,6 +127,7 @@ function handleSubmit(onSuccess) {
         showSuccessTemplate();
       },
       () => {
+        document.removeEventListener('keydown', onPopupEscKeydown);
         showErrorTemplate();
         unblockSubmitButton();
       },

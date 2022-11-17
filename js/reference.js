@@ -439,3 +439,36 @@ nextButton.addEventListener('click', () => {
 
 
 */
+
+// Пример использования async await вместо цепочек методов
+/*
+
+async function sendPosts () {
+    let response;
+    try {
+        response = await fetch('jsonplaceholder.typicode.com', {
+            method: 'POST',
+            body: JSON.stringify({
+                    title: 'Заголовок',
+                    body: 'Тело',
+                    userId: 31337
+            }),
+        },
+    );
+        if (!response.ok) {
+            throw new Error(`${response.status} - ${response.statusText}`);
+        }
+    } catch (err) {
+        return alert(err);
+    }
+
+    const post = await response.json();
+    return post;
+}
+
+(async function() {
+    const result =  await sendPosts();
+    console.log(result);
+})();
+
+*/
