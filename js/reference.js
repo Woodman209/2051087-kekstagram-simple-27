@@ -472,3 +472,34 @@ async function sendPosts () {
 })();
 
 */
+
+// устранение дребезга с помощью функции debounce
+
+/*
+
+const debounce = (callback, timeoutDelay) => {
+  let timeoutId;
+  return (...rest) => {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => callback.apply(this, rest), timeoutDelay);
+  };
+};
+
+
+import {debounce} from './util.js';
+
+const RERENDER_DELAY = 500;
+
+getData((wizards) => {
+  renderSimilarList(wizards);
+  setEyesClick(debounce(
+    () => renderSimilarList(wizards),
+    RERENDER_DELAY,
+  ));
+  setCoatClick(debounce(
+    () => renderSimilarList(wizards),
+    RERENDER_DELAY,
+  ));
+});
+
+*/
